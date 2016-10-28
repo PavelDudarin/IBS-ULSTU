@@ -1,0 +1,153 @@
+body {
+	width: 700px;
+	margin: auto;
+	font-family: tahoma, ​arial, helvetica,​ sans-serif;
+}
+
+a {
+	color: blue;
+	text-decoration: none;
+}
+a:visited { 
+	color: blue; 
+	text-decoration: none; 
+} 
+a:hover {
+	color: tomato;
+}
+
+.caption {
+	margin: auto;
+	wodth: 700px;
+	margin-bottom: 5px;
+	font-size: 14pt; 
+	font-weight: bold; 
+	font-family: sans-serif;
+	text-align: center; 
+	width: 100%; 
+	color: tomato;
+}
+
+.header {
+	width: 100%;
+}
+
+.tableHeader {
+	font-size: 14pt; 
+	font-weight: bold; 
+	font-family: sans-serif;
+	margin: 20px 0 5px 10px;
+}
+
+.ship-image {
+	height: 220px;
+	display: table-cell;
+	float: left;
+}
+
+.ship-image * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.ship-image img {
+	width: 265px;
+	height: 200px;
+	border: 2px ridge black;
+	cursor: pointer;
+}
+
+.image-counter {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+}
+
+.left-arrow, .right-arrow {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background: url(../image/arrows.png)
+}
+
+.left-arrow {
+	background-position: 0 -30px;
+	visibility: hidden;
+}
+.left-arrow:hover {
+	background-position: -90px -30px;
+}
+
+.right-arrow {
+	background-position: 0 0;
+}
+.right-arrow:hover {
+	background-position: -90px 0;
+}
+
+
+table {
+	width: 100%;
+}
+.table {
+			border-collapse: collapse;
+	font-size: 9pt;
+	margin: auto;
+}
+.table tr:nth-child(even) {
+	background-color: white;
+}
+.table tr:nth-child(odd) {
+	background-color: #eff4f8;
+}
+.table td {
+	border: 2px ridge black;
+	padding: 2px 0 2px 10px;
+}
+.section {
+	margin: auto; 
+	width: 600px;
+}
+
+
+.mss-cs-alert-row {
+	
+}
+
+.mss-cs-alert-row div {
+	background-image: url(../images/ships/specialShips.png);
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.mss-cs-alert-row span {
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+.mss-sc-alert-icon-danger-cargo {
+	background-position: -40px 0;
+}
+.mss-sc-alert-icon-detention {
+	background-position: -20px -20px;
+}
+.mss-sc-alert-icon-target-factor {
+	background-position: -60px 0;
+}
+.mss-sc-alert-icon-disqualified {
+	background-position: 0 -20px;
+}
+.mss-sc-alert-icon-infringer {
+	background-position: -20px 0;
+}
+.mss-sc-alert-icon-alert {
+	background-position: 0 0;
+}
+.mss-sc-alert-icon-exceeded {
+	background-position: -40px -20px;
+}

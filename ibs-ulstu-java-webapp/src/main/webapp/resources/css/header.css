@@ -1,0 +1,51 @@
+.headerCt{
+	height: 60px;
+    background-image: url(../images/header/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.headerCt .logo{
+	float: left;
+	width: 68px;
+	height: 37px;
+	background-image: url(../images/header/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 10px 0 0 10px;
+}
+.headerCt .pageTitle{
+	float: left;
+    color: #FFFFFF;
+    font-size: 14pt;
+    margin: 20px 0 0 15px;
+}
+.headerCt .rightCt{
+	float: right;
+    width: 60px;
+	margin: 10px 15px 0 0;
+    text-align: right;
+}
+.headerCt .rightCt > a{
+	display: inline-block;
+	width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+}
+.headerCt .rightCt > a.portalActions{
+	background-image: url(../images/header/sprite.png);
+}
+.headerCt .rightCt > a.portalActions[name="lk"]{
+	background-position: 0 -30px;
+}
+.headerCt .rightCt > a.portalActions[name="instruction"]{
+	background-position: 0 0;
+}
+.headerCt .rightCt > a.portalActions[name="logout"]{
+	background-position: 0 -15px;
+}
+.headerCt .rightCt > a[name="ru_RU"]{
+	background-image: url(../images/header/ru_RU.png);
+}
+.headerCt .rightCt > a[name="en_US"]{
+	background-image: url(../images/header/en_US.png);
+}
