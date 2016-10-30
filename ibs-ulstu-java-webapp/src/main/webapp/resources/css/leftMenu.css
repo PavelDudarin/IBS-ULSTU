@@ -1,0 +1,12 @@
+.leftMenuCt{
+	width: 265px;
+    float: left;
+    height: 100vh;
+    background-image: url(../images/leftMenu/bgDraft.jpg);
+    background-repeat: no-repeat;
+}
+#leftMenuCollapseIcon{
+	float: right;
+    margin: 7px 7px 0 0;
+    cursor: pointer;
+}
