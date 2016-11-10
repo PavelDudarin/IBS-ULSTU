@@ -17,7 +17,7 @@
 				Ext.create('More.view.ships.Main',{
 					renderTo: 'mainDiv'
 				});
-			}
+                }
 		});
 </script>
 </head>

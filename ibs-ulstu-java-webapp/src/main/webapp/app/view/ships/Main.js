@@ -2,17 +2,15 @@ Ext.define('More.view.ships.Main', {
     extend: 'Ext.Panel',
     xtype: 'ships',
     requires: ['More.view.ships.ShipsGrid'],
-    
     layout: 'border',
     defaults: {
     	split: true,
     },
     height: 670,
-    
     items: [{
     	title: 'Список судов',
     	region: 'center',
-    	xtype: 'shipsgrid'
+    	xtype: 'shipsgrid',
     },{
     	title: 'Карточка детализации',
     	region: 'east',
