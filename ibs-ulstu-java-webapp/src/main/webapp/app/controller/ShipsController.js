@@ -9,6 +9,9 @@ Ext.define('More.controller.ShipsController', {
     getQuerySearchShip: function(){
             return Ext.ComponentQuery.query('#querySearchShip')[0];
         },
+    getSearchForm: function(){
+        	return Ext.ComponentQuery.query('searchform')[0];
+        },
 	init : function() {
     		this.control({
     			'shipsgrid button[action=searchShip]' : {
@@ -16,7 +19,13 @@ Ext.define('More.controller.ShipsController', {
     			},
     			'shipsgrid' : {
     			    cellclick : this.oncellclick
-    			}
+    			},
+    			'searchform button[action=advancedSearch]' : {
+                    click : this.onBtnAdvancedSearch
+                },
+                'searchform button[action=clearForm]' : {
+                    click : this.onBtnClearSearchForm
+                }
     		});
     		this.initialized = true;
     	},
@@ -25,7 +34,7 @@ Ext.define('More.controller.ShipsController', {
         this.getShipsGrid().getStore().filter('name',query);
     },
     oncellclick : function(view, cell, cellIndex, record, row, rowIndex, e ){
-              this.showInfo(record);
+        this.showInfo(record);
     },
     showInfo : function(record){
     		var info = "<p>";
@@ -37,6 +46,28 @@ Ext.define('More.controller.ShipsController', {
     			info = "Информация отсутствует";
 
     		Ext.Msg.alert('Информация',info);
-    }
+    },
+    onBtnClearSearchForm : function(){
+        this.getSearchForm().reset();
+    },
+    onBtnAdvancedSearch : function(){
+        var values = this.getSearchForm().getValues();
+        this.getShipsGrid().getStore().filter([{
+                  property : 'name',
+                  value    : values.name
+              },{
+                  property : 'nameLat',
+                  value    : values.nameLat
+              },{
+                  property : 'callSign',
+                  value    : values.callSign
+              },{
+                 property : 'imo',
+                 value    : values.imo
+              },{
+                property : 'mmsi',
+                value    : values.mmsi
+             }]);
+     }
 
 });
