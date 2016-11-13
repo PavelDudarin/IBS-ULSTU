@@ -51,11 +51,28 @@ Ext.define('More.view.ships.ShipsGrid', {
                                 xtype: 'textfield',
                                 fieldLabel: 'Быстрый поиск:',
                                 emptyText: 'Введите текст для поиска...',
+                                width: 300,
                                 itemId: 'querySearchShip',
                                 }, {
                                 xtype: 'button',
                                 iconCls : 'ship-search',
                                 action: 'searchShip',
+                                }, '->',
+                                {
+                                	xtype: 'button',
+                                	text: 'Детализация',
+                                	icon: 'resources/images/ships/preview-right.gif',
+                                	name: 'detalizationButton',
+                                	menu: [{
+                                		text: 'Справа',
+                                		name: 'right'
+                                	},{
+                                		text: 'Снизу',
+                                		name: 'down'
+                                	},{
+                                		text: 'Скрыто',
+                                		name: 'hidden'
+                                	}]
                                 }]
                             },{
                            xtype: 'pagingtoolbar',

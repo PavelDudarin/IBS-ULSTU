@@ -24,6 +24,8 @@ Ext.define('More.view.ships.Main', {
     	collapsible: true,
     	collapsed: true,
     	width: 750,
+    	height: 300,
+    	name: 'detalizationPanel',
     	html: '<iframe src="shipDetails" style="width:100%; height:100%;border:none;"/>'
     }
 
