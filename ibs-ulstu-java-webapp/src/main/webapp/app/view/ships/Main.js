@@ -27,7 +27,5 @@ Ext.define('More.view.ships.Main', {
     	height: 300,
     	name: 'detalizationPanel',
     	html: '<iframe src="shipDetails" style="width:100%; height:100%;border:none;"/>'
-    }
-
-        ]
+    }]
 });

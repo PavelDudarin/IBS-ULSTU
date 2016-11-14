@@ -6,9 +6,8 @@ Ext.define('More.view.ships.SearchForm', {
     defaults: {
         anchor: '100%',
         padding: 15
-                },
+        },
     initComponent: function(arguments){
-
         this.items =  [{
             xtype: 'textfield',
             name : 'name',
@@ -42,14 +41,14 @@ Ext.define('More.view.ships.SearchForm', {
             xtype:'toolbar',
             docked: 'top',
             items: ['->',{
-                    text: 'Найти',
-                    action: 'advancedSearch',
-                    iconCls : 'ship-search'
+                text: 'Найти',
+                action: 'advancedSearch',
+                iconCls : 'ship-search'
                 },{
-                    text: 'Очистить',
-                    action: 'clearForm',
-                    iconCls : 'ship-clear'
-                 }]
+                text: 'Очистить',
+                action: 'clearForm',
+                iconCls : 'ship-clear'
+                }]
         }];
         this.callParent(arguments);
     }

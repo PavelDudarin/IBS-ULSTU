@@ -4,36 +4,36 @@ Ext.define('More.controller.ShipsController', {
 	stores: ['More.store.Ship'],
 	initialized : false,
 	getShipsGrid: function(){
-    		return Ext.ComponentQuery.query('shipsgrid')[0];
-    	},
+        return Ext.ComponentQuery.query('shipsgrid')[0];
+    },
     getQuerySearchShip: function(){
-            return Ext.ComponentQuery.query('#querySearchShip')[0];
-        },
+        return Ext.ComponentQuery.query('#querySearchShip')[0];
+    },
     getSearchForm: function(){
-        	return Ext.ComponentQuery.query('searchform')[0];
-        },
+        return Ext.ComponentQuery.query('searchform')[0];
+    },
     getDetalizationPanel: function(){
     	return Ext.ComponentQuery.query('panel [name=detalizationPanel]')[0];
     },
 	init : function() {
-    		this.control({
-    			'shipsgrid button[action=searchShip]' : {
-    				click : this.onBtnSearchShip
-    			},
-    			'shipsgrid' : {
-    			    cellclick : this.oncellclick
-    			},
-    			'searchform button[action=advancedSearch]' : {
-                    click : this.onBtnAdvancedSearch
-                },
-                'searchform button[action=clearForm]' : {
-                    click : this.onBtnClearSearchForm
-                },
-                'button[name=detalizationButton] menuitem' : {
-                	click: this.onDetalizationPositionChanged
-                }
-    		});
-    		this.initialized = true;
+        this.control({
+            'shipsgrid button[action=searchShip]' : {
+                click : this.onBtnSearchShip
+            },
+            'shipsgrid' : {
+                cellclick : this.oncellclick
+            },
+            'searchform button[action=advancedSearch]' : {
+                click : this.onBtnAdvancedSearch
+            },
+            'searchform button[action=clearForm]' : {
+                click : this.onBtnClearSearchForm
+            },
+            'button[name=detalizationButton] menuitem' : {
+                click: this.onDetalizationPositionChanged
+            }
+        });
+        this.initialized = true;
     	},
     onBtnSearchShip : function() {
         var query = this.getQuerySearchShip().getValue();
@@ -70,21 +70,20 @@ Ext.define('More.controller.ShipsController', {
     onBtnAdvancedSearch : function(){
         var values = this.getSearchForm().getValues();
         this.getShipsGrid().getStore().filter([{
-                  property : 'name',
-                  value    : values.name
-              },{
-                  property : 'nameLat',
-                  value    : values.nameLat
-              },{
-                  property : 'callSign',
-                  value    : values.callSign
-              },{
-                 property : 'imo',
-                 value    : values.imo
-              },{
+                property : 'name',
+                value    : values.name
+            },{
+                property : 'nameLat',
+                value    : values.nameLat
+            },{
+                property : 'callSign',
+                value    : values.callSign
+            },{
+                property : 'imo',
+                value    : values.imo
+            },{
                 property : 'mmsi',
                 value    : values.mmsi
-             }]);
+            }]);
      }
-
 });

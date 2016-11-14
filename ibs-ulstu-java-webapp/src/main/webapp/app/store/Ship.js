@@ -4,11 +4,11 @@ Ext.define('More.store.Ship', {
 	model: 'More.model.Ship',
 	pageSize: 10,
 	proxy: {
-            type: 'ajax',
-            url: 'app/testdata/ships.json',
+        type: 'ajax',
+        url: 'app/testdata/ships.json',
             reader: {
                 type: 'json',
                 root: 'list'
+                }
             }
-           }
 });
