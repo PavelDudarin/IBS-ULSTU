@@ -51,6 +51,7 @@ Ext.define('More.view.ships.ShipsGrid', {
                 emptyText: 'Введите текст для поиска...',
                 width: 300,
                 itemId: 'querySearchShip',
+                enableKeyEvents: true
             },{
                 xtype: 'button',
                 iconCls : 'ship-search',

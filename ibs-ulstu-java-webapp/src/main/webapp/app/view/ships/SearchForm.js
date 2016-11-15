@@ -5,7 +5,8 @@ Ext.define('More.view.ships.SearchForm', {
     //bodyPadding: 10,
     defaults: {
         anchor: '100%',
-        padding: 15
+        padding: 15,
+        enableKeyEvents: true
         },
     initComponent: function(arguments){
         this.items =  [{

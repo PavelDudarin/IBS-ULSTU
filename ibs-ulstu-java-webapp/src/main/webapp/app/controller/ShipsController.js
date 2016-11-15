@@ -23,6 +23,12 @@ Ext.define('More.controller.ShipsController', {
             'shipsgrid' : {
                 cellclick : this.oncellclick
             },
+            'shipsgrid textfield#querySearchShip' : {
+                keypress : this.onKeyEnterPress
+            },
+            'searchform > [name]' : {
+                keypress : this.onFormKeyEnterPress
+            },
             'searchform button[action=advancedSearch]' : {
                 click : this.onBtnAdvancedSearch
             },
@@ -35,9 +41,20 @@ Ext.define('More.controller.ShipsController', {
         });
         this.initialized = true;
     	},
+
     onBtnSearchShip : function() {
-        var query = this.getQuerySearchShip().getValue();
-        this.getShipsGrid().getStore().filter('name',query);
+        var query = this.getQuerySearchShip().getValue().toLowerCase();
+        this.getShipsGrid().getStore().clearFilter();
+        this.getShipsGrid().getStore().filterBy(function(record){
+            if (!query || query.length == 0)
+                return true;
+            else
+                return ((record.get('name').toLowerCase()).indexOf(query) != -1 ||
+                    (record.get('nameLat').toLowerCase()).indexOf(query) != -1 ||
+                    (record.get('callSign').toLowerCase()).indexOf(query) != -1 ||
+                    (record.get('imo').toLowerCase()).indexOf(query) != -1 ||
+                    (record.get('mmsi').toLowerCase()).indexOf(query) != -1 )
+        });
     },
     onDetalizationPositionChanged: function(menuitem,e,eOpts){
     	var detalizationPosition = menuitem.name;
@@ -66,9 +83,11 @@ Ext.define('More.controller.ShipsController', {
     },
     onBtnClearSearchForm : function(){
         this.getSearchForm().reset();
+        this.onBtnAdvancedSearch();
     },
     onBtnAdvancedSearch : function(){
         var values = this.getSearchForm().getValues();
+        this.getShipsGrid().getStore().clearFilter();
         this.getShipsGrid().getStore().filter([{
                 property : 'name',
                 value    : values.name
@@ -85,5 +104,13 @@ Ext.define('More.controller.ShipsController', {
                 property : 'mmsi',
                 value    : values.mmsi
             }]);
-     }
+     },
+    onKeyEnterPress : function(field,event){
+        if (event.getKey() == event.ENTER)
+            this.onBtnSearchShip();
+    },
+    onFormKeyEnterPress : function(field,event){
+        if (event.getKey() == event.ENTER)
+            this.onBtnAdvancedSearch();
+    }
 });
